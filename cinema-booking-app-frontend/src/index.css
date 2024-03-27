@@ -1,0 +1,66 @@
+.App {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+footer {
+  position: sticky;
+  top: 100%;
+}
+
+.custom-input:focus {
+  border-color: gray !important;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25) !important;
+}
+
+.logod {
+  color: yellow;
+}
+
+.field {
+  margin: 2px 0 10px 2px;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.field input {
+  cursor: pointer;
+}
+.field label {
+  cursor: pointer;
+}
+
+input[type='radio'] {
+  cursor: pointer;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: transparent !important;
+  border-color: gray !important;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25) !important;
+  font-weight: bold;
+}
+
+.seat-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 400px;
+}
+
+.seat {
+  color: green;
+  height: 25px;
+  margin: 3px;
+}
+
+.seat.occupied {
+  color: gray;
+}
+
+.seat.selected {
+  color: blue;
+}
+
+.seat.recommended {
+  color: cyan;
+}

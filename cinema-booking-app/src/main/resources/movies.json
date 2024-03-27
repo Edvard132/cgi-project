@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Puss in Boots: The Last Wish",
+    "trailerLink": "https://www.youtube.com/watch?v=tHb7WlgyaUc",
+    "genres": ["Animation", "Action", "Adventure", "Comedy", "Family"],
+    "posterLink": "https://image.tmdb.org/t/p/w500/1NqwE6LP9IEdOZ57NCT51ftHtWT.jpg",
+    "fromAge": 3,
+    "duration": 112,
+    "score": 7.4
+  },
+  {
+    "title": "Avatar: The Way of Water",
+    "trailerLink": "https://www.youtube.com/watch?v=d9MyW72ELq0",
+    "genres": ["Science Fiction", "Action", "Adventure"],
+    "posterLink": "https://image.tmdb.org/t/p/w500/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg",
+    "fromAge": 3,
+    "duration": 178,
+    "score": 6.8
+  },
+  {
+    "title": "M3GAN",
+    "trailerLink": "https://www.youtube.com/watch?v=BRb4U99OU80",
+    "genres": ["Science Fiction", "Horror", "Comedy"],
+    "posterLink": "https://image.tmdb.org/t/p/w500/xBl5AGw7HXZcv1nNXPlzGgO4Cfo.jpg",
+    "fromAge": 16,
+    "duration": 102,
+    "score": 6.0
+  },
+  {
+    "title": "Troll",
+    "trailerLink": "https://www.youtube.com/watch?v=AiohkY_XQYQ",
+    "genres": ["Fantasy", "Action", "Adventure"],
+    "posterLink": "https://image.tmdb.org/t/p/w500/9z4jRr43JdtU66P0iy8h18OyLql.jpg",
+    "fromAge": 12,
+    "duration": 99,
+    "score": 5.9
+  },
+  {
+    "title": "Black Adam",
+    "trailerLink": "https://www.youtube.com/watch?v=JaV7mmc9HGw",
+    "genres": ["Fantasy", "Action", "Science Fiction"],
+    "posterLink": "https://image.tmdb.org/t/p/w500/pFlaoHTZeyNkG83vxsAJiGzfSsa.jpg",
+    "fromAge": 12,
+    "duration": 101,
+    "score": 7.0
+  },
+  {
+    "title": "Avatar",
+    "trailerLink": "https://www.youtube.com/watch?v=5PSNL1qE6VY",
+    "genres": ["Fantasy", "Action", "Science Fiction", "Adventure"],
+    "posterLink": "https://image.tmdb.org/t/p/w500/jRXYjXNq0Cs2TcJjLkki24MLp7u.jpg",
+    "fromAge": 6,
+    "duration": 147,
+    "score": 7.9
+  },
+  {
+    "title": "Roald Dahl's Matilda the Musical",
+    "trailerLink": "https://www.youtube.com/watch?v=lroAhsDr2vI",
+    "genres": ["Fantasy", "Family", "Comedy"],
+    "posterLink": "https://image.tmdb.org/t/p/w500/ga8R3OiOMMgSvZ4cOj8x7prUNYZ.jpg",
+    "fromAge": 3,
+    "duration": 108,
+    "score": 8.1
+  },
+  {
+    "title": "Black Panther: Wakanda Forever",
+    "trailerLink": "https://www.youtube.com/watch?v=_Z3QKkl1WyM",
+    "genres": ["Action", "Adventure", "Science Fiction"],
+    "posterLink": "https://image.tmdb.org/t/p/w500/cryEN3sWlgB2wTzcUNVtDGI8bkM.jpg",
+    "fromAge": 12,
+    "duration": 115,
+    "score": 7.0
+  },
+  {
+    "title": "Strange World",
+    "trailerLink": "https://www.youtube.com/watch?v=bKh2G73gCCs",
+    "genres": ["Family", "Adventure", "Science Fiction", "Animation"],
+    "posterLink": "https://image.tmdb.org/t/p/w500/kgJ8bX3zDQDM2Idkleis28XSVnu.jpg",
+    "fromAge": 12,
+    "duration": 92,
+    "score": 6.6
+  },
+  {
+    "title": "The Woman King",
+    "trailerLink": "https://www.youtube.com/watch?v=3RDaPV_rJ1Y",
+    "genres": ["Action", "Drama", "History"],
+    "posterLink": "https://image.tmdb.org/t/p/w500/5O1GLla5vNuegqNxNhKL1OKE1lO.jpg",
+    "fromAge": 12,
+    "duration": 101,
+    "score": 6.4
+  }
+]
