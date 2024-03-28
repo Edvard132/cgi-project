@@ -42,4 +42,5 @@ Näide: `write a function to read data from json file in java`
 
 Näide: `j + amount + 1 get added as string, why?`
 Kuigi amount on initsialiseeritud kui number, mida kasutaja ka muuta saab, miskipärast siin funktsioonile selle edastades, tahab ta liita indeksit ja amounti kui kirjeid.
+
 ![image](https://github.com/Edvard132/cgi-project/assets/92860643/8db9faeb-2d70-4073-b147-4a62836f9b78)
