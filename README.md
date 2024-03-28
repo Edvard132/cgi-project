@@ -27,15 +27,19 @@ Seanssi istekohtade valimiseks peab kasutaja sisse logima, samuti ka filmi soovi
 Autoriseerimine on implementeeritud, kuid ilma parooli tokeniseerimiseta/kodeerimiseta, kuna see ei olnud ülesande kohustulik osa ja prioriteet.
 
 Kasutajale filmide soovitamine toimub kasutaja vaadatud filmide žanrite põhjal. Kui filmis esineb žanr, mida kasutaja varasemalt näinud on, siis seda ka soovitakse. Soovitused on sorteeritud filmi skoori järgi kahanevalt.
+Istekohtade soovitamine käib distantsi arvutamise järgi saali keskpunktist - minimaalne distants on parim.
 Filmi andmete fail on võetud aadressilt __https://github.com/fhsinchy/movieist/blob/master/_data/movies.json__ ning täiendatud vastavalt vajadustele.
 
 ## Kulgemine
-
+Töö tegemiseks kulunuad aeg - orienteeruvalt 30-35h.  
 Töö raskeim osa oli andmebaasi mudeli koostamine, kuna katsetasin palju kombinatsioone ja pidevalt sattusin mõne vea otsa. Tuli ette mitmeid lõpmatuid tsükleid andmete relatsioonide valesti defineerimisest. Need said lahendatud, valides lihtsama mudeli. 
+Olid mõned CSSi omadused, mida oli tarvis meelde tuletada, kuna pole mitu kuud kasutanud seda, ning selle peale läks ka natuke rohkem aega.
 
 ## AI
 Tehisintellektist kasutasin OpenAI keelemudelit Chat-GPTd üksikute väiksemate ülesannete lahendamiseks.    
-Näide:
-Promp: `write a function to read data from json file in java`
+Näide: `write a function to read data from json file in java`
 ![image](https://github.com/Edvard132/cgi-project/assets/92860643/5d7aceb3-50ac-4009-9e85-e0305fcfdafb)
 
+Näide: `j + amount + 1 get added as string, why?`
+Kuigi amount on initsialiseeritud kui number, mida kasutaja ka muuta saab, miskipärast siin funktsioonile selle edastades, tahab ta liita indeksit ja amounti kui kirjeid.
+![image](https://github.com/Edvard132/cgi-project/assets/92860643/8db9faeb-2d70-4073-b147-4a62836f9b78)
