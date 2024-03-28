@@ -30,7 +30,12 @@ public class MovieController {
     @GetMapping("/getAllMovies")
     public ResponseEntity<Map<String, Object>> getAllMovies(@RequestParam(value = "userEmail", required = false) String email){
         if (email != null) {
-            return ResponseEntity.ok(movieService.getAllMovies(email));
+            Map<String, Object> userMovies = movieService.getAllMovies(email);
+
+            if (userMovies != null){
+                return ResponseEntity.ok(userMovies);
+            }
+            return new ResponseEntity<>(movieService.getAllMovies(), HttpStatus.CONFLICT);
         } else {
             return ResponseEntity.ok(movieService.getAllMovies());
         }

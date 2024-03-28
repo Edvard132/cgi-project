@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCouch } from '@fortawesome/free-solid-svg-icons';
 import api from '../api/axiosConfig';
 import Form from 'react-bootstrap/Form';
-import formatDate from '../utils/utils';
+import { formatDate, recommendSeats } from '../utils/utils';
 import { useGlobalContext } from '../context';
 import Button from 'react-bootstrap/Button';
 import GetCookie from '../hooks/getCookie';
@@ -13,8 +13,9 @@ import RemoveCookie from '../hooks/removeCookie';
 const Booking = ({ movie }) => {
   const [sessions, setSessions] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  let [session, setSession] = useState({});
+  const [session, setSession] = useState({});
   const [showConfirm, setShowConfirm] = useState(false);
+  const [seatToBookCount, setSeatToBookCount] = useState(0);
 
   const [purchase, setPurchase] = useState({});
 
@@ -72,10 +73,24 @@ const Booking = ({ movie }) => {
   const handleSelectSession = (e) => {
     if (e.target.value != -1) {
       setSession(sessions[e.target.value]);
-      recommendSeat(sessions[e.target.value]);
+      const temp = sessions[e.target.value].seats;
+      const newSeats = recommendSeats(temp, seatToBookCount);
+      setSession({ ...sessions[e.target.value], seats: newSeats });
+
       return;
     }
     setSession({});
+  };
+
+  const handleSelectTicketCount = (e) => {
+    setSeatToBookCount(e.target.value);
+    if (session.seats) {
+      const temp = session.seats.map((seat) => {
+        return { ...seat, recommended: false, selected: false };
+      });
+      const newSeats = recommendSeats(temp, e.target.value);
+      setSession({ ...session, seats: newSeats });
+    }
   };
 
   const handleSelectSeat = (i) => {
@@ -98,24 +113,9 @@ const Booking = ({ movie }) => {
     setSession({ ...session, seats: updatedSeats });
   };
 
-  const recommendSeat = (session) => {
-    const updatedSeats = session.seats.map((seat) => {
-      if (
-        !seat.occupied &&
-        seat.rowNumber > 1 &&
-        seat.rowNumber < 5 &&
-        seat.seatNumber < 8 &&
-        seat.seatNumber > 3
-      ) {
-        return { ...seat, recommended: true };
-      }
-      return seat;
-    });
-    setSession({ ...session, seats: updatedSeats });
-  };
-
   useEffect(() => {
     getSessions();
+    console.log(session);
   }, []);
 
   return (
@@ -125,13 +125,23 @@ const Booking = ({ movie }) => {
       ) : (
         <>
           <div className='mx-md-auto'>
-            <Form.Select onChange={handleSelectSession} className='w-100'>
+            <Form.Select onChange={handleSelectSession} className='w-100 mb-3'>
               <option value={-1}>Choose a session start time</option>
               {sessions?.map((session, i) => (
                 <option value={i} key={session.id}>
                   {formatDate(session.startDateTime)}
                 </option>
               ))}
+            </Form.Select>
+            <Form.Select
+              onChange={handleSelectTicketCount}
+              className='w-50 mx-auto'
+            >
+              <option value={-1}>Choose ticket amount</option>
+              <option value={1}>1</option>
+              <option value={2}>2</option>
+              <option value={3}>3</option>
+              <option value={4}>4</option>
             </Form.Select>
             <div className='mt-4 d-flex' style={{ fontSize: '12px' }}>
               <div className='me-2 d-flex align-items-center text-muted'>

@@ -43,7 +43,7 @@ public class MovieService {
                 genres.putIfAbsent(g, true);
             }
         }
-        map.put("movies", movieDAO.findAll());
+        map.put("movies", movies);
         map.put("genres", genres);
         return map;
     }
@@ -51,6 +51,9 @@ public class MovieService {
     public Map<String, Object> getAllMovies(String email){
         Map<String, Object> map = getAllMovies();
         User user = userDAO.findByEmail(email);
+        if (user == null){
+            return null;
+        }
         Set<String> preferences = user.getGenrePreferences();
 
         map.put("preferences", preferences);

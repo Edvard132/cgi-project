@@ -7,12 +7,13 @@ import Filters from '../components/Filters';
 import Button from 'react-bootstrap/Button';
 import { useGlobalContext } from '../context';
 import GetCookie from '../hooks/getCookie';
+import RemoveCookie from '../hooks/removeCookie';
 
 const LandingPage = () => {
   let [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [preferences, setPreferences] = useState([]);
-  const { isAuthenticated } = useGlobalContext();
+  const { isAuthenticated, setIsAuthenticated } = useGlobalContext();
 
   let [filters, setFilters] = useState({
     genre: {},
@@ -39,6 +40,11 @@ const LandingPage = () => {
       });
     } catch (err) {
       console.log('Error: ', err);
+      if (err.response.status === 409) {
+        setIsAuthenticated(false);
+        RemoveCookie('AUTH');
+        setMovies(err.resopnse.data.movies);
+      }
     }
   };
 

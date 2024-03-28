@@ -1,7 +1,7 @@
 import React from 'react';
 import Toast from 'react-bootstrap/Toast';
 import ToastContainer from 'react-bootstrap/ToastContainer';
-import formatDate from '../utils/utils';
+import { formatDate } from '../utils/utils';
 
 const Confirmation = ({ showConfirm, setShowConfirm, purchase }) => {
   console.log(purchase);

@@ -1,6 +1,5 @@
 import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
-import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 const Filters = ({ filters, setFilters }) => {
